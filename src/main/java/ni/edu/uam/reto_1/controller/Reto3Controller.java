@@ -24,32 +24,22 @@ public class Reto3Controller {
 
     @FXML
     public void initialize() {
-        // 1. Vincular columnas con los atributos de la clase Artesania
-        colImagen.setCellValueFactory(new PropertyValueFactory<>("imagen"));
-        colCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
-        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
+        // Vincular columnas validando que no sean null
+        if (colImagen != null) colImagen.setCellValueFactory(new PropertyValueFactory<>("imagen"));
+        if (colCodigo != null) colCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+        if (colNombre != null) colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        if (colPrecio != null) colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
 
-        // 2. Cargar las imágenes de manera segura con bloque try-catch
-        try {
-            Image img1 = new Image(getClass().getResourceAsStream("/Imagenes/Masaya-Arts-and-Crafts-Nicaragua-Centroamerica-06.webp"));
-            Image img2 = new Image(getClass().getResourceAsStream("/Imagenes/bff951bb1266002621d66e0ce2616a96.webp"));
+        // Crear objetos de prueba sin pasar imágenes
+        Artesania art1 = new Artesania("ART-001", "Artesanía de Masaya", 450.50, null);
+        Artesania art2 = new Artesania("ART-002", "Adorno Nicaragüense", 320.00, null);
 
-            ImageView view1 = new ImageView(img1);
-            ImageView view2 = new ImageView(img2);
+        listaArtesanias.clear();
+        listaArtesanias.addAll(art1, art2);
 
-            // 3. Crear objetos Artesania
-            Artesania art1 = new Artesania("ART-001", "Artesanía de Masaya", 450.50, view1);
-            Artesania art2 = new Artesania("ART-002", "Adorno Nicaragüense", 320.00, view2);
-
-            listaArtesanias.addAll(art1, art2);
-        } catch (Exception e) {
-            System.out.println("Error al cargar las imágenes. Revisa los nombres de archivo.");
-            e.printStackTrace();
+        if (tablaArtesanias != null) {
+            tablaArtesanias.setItems(listaArtesanias);
         }
-
-        // 4. Asignar lista a la tabla
-        tablaArtesanias.setItems(listaArtesanias);
     }
 
     // Eventos de la ToolBar y el Menú

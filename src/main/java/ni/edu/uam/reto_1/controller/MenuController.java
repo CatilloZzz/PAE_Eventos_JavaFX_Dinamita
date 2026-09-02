@@ -42,16 +42,12 @@ public class MenuController {
     @FXML
     private void onReto3Click(ActionEvent event) {
         try {
-            // Carga la vista del Reto 3
-            javafx.fxml.FXMLLoader fxmlLoader = new javafx.fxml.FXMLLoader(getClass().getResource("/ni/edu/uam/reto_1/Reto3-view.fxml"));
-            javafx.scene.Parent root = fxmlLoader.load();
-
-            // Cambia la escena actual
-            javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new javafx.scene.Scene(root));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ni/edu/uam/reto_1/Reto3-view.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
             stage.show();
         } catch (Exception e) {
-            System.out.println("Error al cargar la ventana del Reto 3.");
             e.printStackTrace();
         }
     }
