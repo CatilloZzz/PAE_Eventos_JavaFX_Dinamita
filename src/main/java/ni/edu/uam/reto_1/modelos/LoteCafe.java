@@ -1,4 +1,4 @@
-package ni.edu.uam.reto_1;
+package ni.edu.uam.reto_1.modelos;
 
 import java.time.LocalDate;
 

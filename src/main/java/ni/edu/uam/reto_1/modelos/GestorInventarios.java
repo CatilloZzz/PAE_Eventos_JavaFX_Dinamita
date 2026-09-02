@@ -1,4 +1,4 @@
-package modelos;
+package ni.edu.uam.reto_1.modelos;
 
 import java.util.HashMap;
 import java.util.Map;

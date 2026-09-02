@@ -1,4 +1,4 @@
-package ni.edu.uam.reto_1;
+package ni.edu.uam.reto_1.modelos;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

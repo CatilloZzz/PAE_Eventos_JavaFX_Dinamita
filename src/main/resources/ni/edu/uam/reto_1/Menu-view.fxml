@@ -3,14 +3,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="15.0"
-      xmlns="http://javafx.com/javafx/17"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="ni.edu.uam.reto_1.MenuController"
-      maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="15.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.reto_1.controller.MenuController">
    <children>
       <Label style="-fx-font-weight: bold; -fx-text-fill: #4a4a4a;" text="Selecciona Un Reto" />
-      <Button fx:id="btnReto1" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #E0E5EC; -fx-background-radius: 15; -fx-text-fill: #4a4a4a; -fx-font-weight: bold; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, #a3b1c6, 10, 0, 5, 5);" text="Reto 1: Pulpería" />
+      <Button fx:id="btnReto1" mnemonicParsing="false" onAction="#onReto1Click" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #E0E5EC; -fx-background-radius: 15; -fx-text-fill: #4a4a4a; -fx-font-weight: bold; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, #a3b1c6, 10, 0, 5, 5);" text="Reto 1: Pulpería" />
       <Button fx:id="btnReto2" mnemonicParsing="false" onAction="#onReto2Click" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #E0E5EC; -fx-background-radius: 15; -fx-text-fill: #4a4a4a; -fx-font-weight: bold; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, #a3b1c6, 10, 0, 5, 5);" text="Reto 2: Recepción de Café" />
       <Button fx:id="btnReto3" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #E0E5EC; -fx-background-radius: 15; -fx-text-fill: #4a4a4a; -fx-font-weight: bold; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, #a3b1c6, 10, 0, 5, 5);" text="Reto 3: Artesanías" />
    </children>

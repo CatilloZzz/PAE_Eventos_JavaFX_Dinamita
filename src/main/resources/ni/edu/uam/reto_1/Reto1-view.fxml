@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="420.0" spacing="12.0" style="-fx-background-color: #E0E5EC;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="420.0" spacing="12.0" style="-fx-background-color: #E0E5EC;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.reto_1.controller.Reto1Controller">   <children>
       <Label style="-fx-text-fill: #4a4a4a; -fx-font-weight: bold; -fx-font-size: 14px;" text="REGISTRO DE PRODUCTOS" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+         <children>
+            <TextField fx:id="txtCodigo" maxWidth="90.0" prefHeight="35.0" promptText="Codigo" style="-fx-background-color: #E0E5EC; -fx-background-radius: 10; -fx-prompt-text-fill: #9a9a9a; -fx-border-color: transparent; -fx-effect: innershadow(three-pass-box, #a3b1c6, 8, 0, 3, 3);" />
+            <TextField fx:id="txtNombre" prefHeight="35.0" promptText="Nombre del producto" style="-fx-background-color: #E0E5EC; -fx-background-radius: 10; -fx-prompt-text-fill: #9a9a9a; -fx-border-color: transparent; -fx-effect: innershadow(three-pass-box, #a3b1c6, 8, 0, 3, 3);" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="txtPrecio" maxWidth="90.0" prefHeight="35.0" promptText="Precio" style="-fx-background-color: #E0E5EC; -fx-background-radius: 10; -fx-prompt-text-fill: #9a9a9a; -fx-border-color: transparent; -fx-effect: innershadow(three-pass-box, #a3b1c6, 8, 0, 3, 3);" />
+            <TextField fx:id="txtCantidad" maxWidth="90.0" prefHeight="35.0" promptText="Cantidad" style="-fx-background-color: #E0E5EC; -fx-background-radius: 10; -fx-prompt-text-fill: #9a9a9a; -fx-border-color: transparent; -fx-effect: innershadow(three-pass-box, #a3b1c6, 8, 0, 3, 3);" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <Button fx:id="btnGuardarProducto" mnemonicParsing="false" onAction="#guardarProducto" prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #E0E5EC; -fx-background-radius: 15; -fx-text-fill: #4a4a4a; -fx-font-weight: bold; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, #a3b1c6, 10, 0, 5, 5);" text="Guardar Producto" />
+      <Label style="-fx-text-fill: #4a4a4a; -fx-font-weight: bold; -fx-font-size: 13px;" text="BUSCAR PRODUCTO (PRESIONE ENTER)" />
+      <TextField fx:id="txtBuscar" onKeyPressed="#buscarConEnter" promptText="Ingrese código y presione ENTER" style="-fx-background-color: #E0E5EC; -fx-background-radius: 10; -fx-prompt-text-fill: #9a9a9a; -fx-border-color: transparent; -fx-effect: innershadow(three-pass-box, #a3b1c6, 8, 0, 3, 3);" />
+      <TableView fx:id="tablaInventario" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E0E5EC; -fx-background-radius: 10; -fx-effect: innershadow(three-pass-box, #a3b1c6, 8, 0, 3, 3);">
+         <columns>
+            <TableColumn fx:id="colCodigo" prefWidth="75.0" text="Código" />
+            <TableColumn fx:id="colNombre" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="colPrecio" prefWidth="75.0" text="Precio" />
+            <TableColumn fx:id="colCantidad" prefWidth="75.0" text="Stock" />
+         </columns>
+      </TableView>
    </children>
 </VBox>

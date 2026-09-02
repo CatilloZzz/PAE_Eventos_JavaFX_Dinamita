@@ -1,4 +1,4 @@
-package modelos;
+package ni.edu.uam.reto_1.modelos;
 
 public class Producto {
     private String codigo;
