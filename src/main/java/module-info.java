@@ -5,4 +5,6 @@ module ni.edu.uam.reto_1 {
 
     opens ni.edu.uam.reto_1 to javafx.fxml;
     exports ni.edu.uam.reto_1;
+    exports controller;
+    opens controller to javafx.fxml;
 }

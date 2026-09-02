@@ -1,4 +1,4 @@
-package ni.edu.uam.reto_1;
+package controller;
 
 public class MenuController {
 }
